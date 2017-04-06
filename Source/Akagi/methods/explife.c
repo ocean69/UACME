@@ -110,7 +110,7 @@ BOOL ucmUninstallLauncherMethod(
                 break;
 
             lResult = RegSetValueEx(hKey, L"UninstallString", 0, REG_SZ, (BYTE*)lpszExecutable,
-                (DWORD)(_strlen(lpszExecutable) * sizeof(WCHAR)));
+                (DWORD)((_strlen(lpszExecutable) + 1) * sizeof(WCHAR)));
 
             if (lResult != ERROR_SUCCESS)
                 break;
